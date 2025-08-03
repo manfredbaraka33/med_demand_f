@@ -53,6 +53,27 @@ export default function MedicineDemandForm() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [availablePeriods, setAvailablePeriods] = useState(periods);
+
+
+  const regionProcessingPeriods = {
+  Singida: ["Jan-Feb", "March-April", "May-June", "July-Aug", "Sept-Oct"],
+  Dodoma: ["Feb-Mar", "Apr-May", "Jun-Jul", "Aug-Sep", "Oct-Nov"],
+};
+
+  useEffect(() => {
+  if (region) {
+    setDistricts(regionToDistricts[region]);
+    setDistrict("");
+    setAvailablePeriods(regionProcessingPeriods[region] || []);
+  } else {
+    setDistricts([]);
+    setDistrict("");
+    setAvailablePeriods(periods); // default all if none selected
+  }
+}, [region]);
+
+
 
   const toggleDarkMode = () => {
   document.body.classList.toggle("bg-dark");
@@ -255,11 +276,12 @@ export default function MedicineDemandForm() {
                 setForm({ ...form, processingPeriod: e.target.value })
               }
             >
-              {periods.map((p) => (
+              {availablePeriods.map((p) => (
                 <option key={p} value={p}>
                   {p}
                 </option>
               ))}
+
             </select>
           </div>
         </div>
