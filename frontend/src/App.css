@@ -1,0 +1,19 @@
+.fm{
+    min-width: 300px;
+}
+body.bg-dark {
+  transition: background-color 0.3s ease;
+}
+
+body.bg-dark input,
+body.bg-dark select,
+body.bg-dark textarea {
+  background-color: #333;
+  color: #fff;
+}
+
+body.bg-dark .card,
+body.bg-dark .modal-content {
+  background-color: #222;
+  color: #eee;
+}
