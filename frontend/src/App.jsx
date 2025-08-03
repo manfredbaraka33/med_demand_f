@@ -128,7 +128,7 @@ export default function MedicineDemandForm() {
        }`}>
         <div className="container-fluid">
           <span className="navbar-brand fw-bold text-primary">
-            💊 Medicine Demand Predictor
+            💊 MedPred
           </span>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span className="navbar-toggler-icon"></span>
@@ -136,7 +136,7 @@ export default function MedicineDemandForm() {
           <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <button className="btn btn-outline-secondary me-2"
+                    <button className="btn btn-outline-secondary m-3"
                       // onClick={() => {
                       //   document.body.classList.toggle("bg-dark");
                       //   document.body.classList.toggle("text-white");
@@ -146,7 +146,7 @@ export default function MedicineDemandForm() {
                       🌗 Theme
                     </button>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item m-3">
                     <button
                       className="btn btn-outline-info"
                       data-bs-toggle="modal"
@@ -165,7 +165,7 @@ export default function MedicineDemandForm() {
 
       <div className="container shadow p-4">
         <h4 className="text-center text-primary mb-4">
-          Prediction Form
+          Medicine Demand Predictor
         </h4>
 
         <form onSubmit={handleSubmit}>
@@ -173,7 +173,7 @@ export default function MedicineDemandForm() {
           <hr />
           <div className="row">
             <div className="mb-3">
-            <label className="form-label">Product</label>
+            <label className="form-label">Medicine</label>
             <select
               className="form-select"
               value={form.product}
